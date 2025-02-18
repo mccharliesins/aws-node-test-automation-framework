@@ -3,3 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:integration": "jest",
+    "test:load": "artillery run tests/performance/load-test.yml",
+    "test:ci": "npm run test:integration && npm run test:load"
+  },
