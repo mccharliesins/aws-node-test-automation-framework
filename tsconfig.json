@@ -5,3 +5,11 @@
     "lib": ["es2018", "dom"],
     "strict": true,
     "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "rootDir": "./"
+  },
+  "include": ["tests/**/*", "utils/**/*"],
+  "exclude": ["node_modules"]
+}
