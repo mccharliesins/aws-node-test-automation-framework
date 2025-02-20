@@ -14,3 +14,7 @@ export const generateAuthToken = async (): Promise<string> => {
 };
 
 export const uploadReportToS3 = async (bucketName: string, filePath: string): Promise<void> => {
+    if (!fs.existsSync(filePath)) {
+        console.error(`File not found: ${filePath}`);
+        return;
+    }
