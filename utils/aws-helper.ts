@@ -18,3 +18,11 @@ export const uploadReportToS3 = async (bucketName: string, filePath: string): Pr
         console.error(`File not found: ${filePath}`);
         return;
     }
+
+    const fileContent = fs.readFileSync(filePath);
+    const fileName = path.basename(filePath);
+
+    // Credentials loaded from environment variables
+    const client = new S3Client({ region: "us-east-1" });
+
+    try {
