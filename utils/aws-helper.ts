@@ -26,3 +26,7 @@ export const uploadReportToS3 = async (bucketName: string, filePath: string): Pr
     const client = new S3Client({ region: "us-east-1" });
 
     try {
+        const command = new PutObjectCommand({
+            Bucket: bucketName,
+            Key: `reports/${fileName}`,
+            Body: fileContent,
