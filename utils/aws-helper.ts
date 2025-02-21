@@ -30,3 +30,7 @@ export const uploadReportToS3 = async (bucketName: string, filePath: string): Pr
             Bucket: bucketName,
             Key: `reports/${fileName}`,
             Body: fileContent,
+            ContentType: 'text/html'
+        });
+
+        // await client.send(command);
