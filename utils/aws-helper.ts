@@ -34,3 +34,8 @@ export const uploadReportToS3 = async (bucketName: string, filePath: string): Pr
         });
 
         // await client.send(command);
+        console.log(`Uploaded ${fileName} to s3://${bucketName}/reports/${fileName}`);
+    } catch (error) {
+        console.error("Error uploading to S3:", error);
+    }
+};
