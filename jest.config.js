@@ -4,3 +4,9 @@ module.exports = {
     reporters: [
         'default',
         ['jest-html-reporter', {
+            pageTitle: 'Quality Gate Test Report',
+            outputPath: './test-report.html'
+        }]
+    ],
+    testMatch: ['**/tests/integration/**/*.spec.ts']
+};
