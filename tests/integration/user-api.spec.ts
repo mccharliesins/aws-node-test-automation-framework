@@ -16,3 +16,13 @@ describe('User API Integration Tests', () => {
                 'Authorization': `Bearer ${token}`
             }
         });
+        expect(response.status).toBe(200);
+        expect(Array.isArray(response.data)).toBe(true);
+        expect(response.data.length).toBeGreaterThan(0);
+    });
+
+    it('should return user details with correct structure', async () => {
+        const response = await axios.get(`${BASE_URL}/users/1`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
