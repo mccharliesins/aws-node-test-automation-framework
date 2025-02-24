@@ -7,3 +7,12 @@ describe('User API Integration Tests', () => {
     let token: string;
 
     beforeAll(async () => {
+        token = await generateAuthToken();
+    });
+
+    it('should return 200 OK for getting users', async () => {
+        const response = await axios.get(`${BASE_URL}/users`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
