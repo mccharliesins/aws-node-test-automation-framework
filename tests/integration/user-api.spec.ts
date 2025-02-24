@@ -26,3 +26,12 @@ describe('User API Integration Tests', () => {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
+        });
+        expect(response.status).toBe(200);
+        expect(response.data).toHaveProperty('id');
+        expect(response.data).toHaveProperty('name');
+        expect(response.data).toHaveProperty('email');
+    });
+
+    it('should handle 404 for non-existent user', async () => {
+        try {
