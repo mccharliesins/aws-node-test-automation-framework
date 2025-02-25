@@ -14,3 +14,8 @@ config:
 
 scenarios:
   - name: "Get Users"
+    flow:
+      - get:
+          url: "/users"
+          expect: 
+            - statusCode: 200
