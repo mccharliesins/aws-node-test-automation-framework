@@ -40,3 +40,8 @@ describe('User API Integration Tests', () => {
                     'Authorization': `Bearer ${token}`
                 }
             });
+        } catch (error: any) {
+            expect(error.response.status).toBe(404);
+        }
+    });
+});
