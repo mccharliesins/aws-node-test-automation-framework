@@ -6,3 +6,11 @@ config:
       name: "Warm up"
     - duration: 20
       arrivalRate: 2
+      rampTo: 5
+      name: "Ramp up load"
+    - duration: 30
+      arrivalRate: 5
+      name: "Sustained load"
+
+scenarios:
+  - name: "Get Users"
