@@ -35,3 +35,8 @@ describe('User API Integration Tests', () => {
 
     it('should handle 404 for non-existent user', async () => {
         try {
+            await axios.get(`${BASE_URL}/users/99999`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
