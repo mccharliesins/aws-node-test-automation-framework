@@ -1,0 +1,8 @@
+config:
+  target: "https://jsonplaceholder.typicode.com" # Target API
+  phases:
+    - duration: 10
+      arrivalRate: 1
+      name: "Warm up"
+    - duration: 20
+      arrivalRate: 2
