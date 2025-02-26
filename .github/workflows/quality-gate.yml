@@ -1,0 +1,10 @@
+name: Quality Gate Framework
+
+on:
+  pull_request:
+    branches: [ main, master ]
+  push:
+    branches: [ main, master ]
+
+jobs:
+  quality-gate:
