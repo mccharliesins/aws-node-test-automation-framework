@@ -19,3 +19,9 @@ scenarios:
           url: "/users"
           expect: 
             - statusCode: 200
+            - contentType: json
+      - think: 1
+      - get:
+          url: "/users/1"
+          expect:
+            - statusCode: 200
