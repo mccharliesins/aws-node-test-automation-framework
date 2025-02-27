@@ -28,3 +28,13 @@ jobs:
       env:
         API_URL: https://jsonplaceholder.typicode.com
         # AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        # AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+    - name: Run Load Tests (Artillery)
+      # Execute load tests (short duration for CI)
+      run: npm run test:load -- --count 10
+      
+    - name: Upload Test Report to S3
+      if: always() # Run even if tests fail
+      run: |
+        # Uploads to S3
