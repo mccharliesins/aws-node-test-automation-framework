@@ -19,3 +19,25 @@ A robust Test Automation Framework acting as a "Quality Gate" for your applicati
 - npm
 
 ### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd aws-node-test-automation-framework
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running Tests
+
+#### Integration Tests
+Run the Jest integration test suite:
+```bash
+npm run test:integration
+```
+This runs the tests defined in `tests/integration/` against the configured `API_URL` (default: JSONPlaceholder).
+
+#### Load Tests
