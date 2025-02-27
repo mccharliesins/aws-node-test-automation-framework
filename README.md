@@ -41,3 +41,18 @@ npm run test:integration
 This runs the tests defined in `tests/integration/` against the configured `API_URL` (default: JSONPlaceholder).
 
 #### Load Tests
+Run the Artillery load tests:
+```bash
+npm run test:load
+```
+This simulates user load as defined in `tests/performance/load-test.yml`.
+
+#### Full "Quality Gate" Check
+Run both integration and load tests (simulating a CI environment):
+```bash
+npm run test:ci
+```
+
+### Configuration
+
+- **Target Environment**: modify `API_URL` in `.env` or set it in your environment variables.
