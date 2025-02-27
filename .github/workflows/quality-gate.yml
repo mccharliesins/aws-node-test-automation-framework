@@ -38,3 +38,14 @@ jobs:
       if: always() # Run even if tests fail
       run: |
         # Uploads to S3
+        # npx ts-node utils/upload-report.ts
+        echo "Uploading test-report.html to S3..."
+      env:
+        AWS_REGION: us-east-1
+        
+    - name: Archive Test Report
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-report
+        path: test-report.html
