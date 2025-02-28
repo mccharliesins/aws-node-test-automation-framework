@@ -56,3 +56,18 @@ npm run test:ci
 ### Configuration
 
 - **Target Environment**: modify `API_URL` in `.env` or set it in your environment variables.
+- **Load Profiles**: Adjust `arrivalRate` and `duration` in `tests/performance/load-test.yml` to match your requirements.
+- **AWS S3**: Configure AWS credentials and bucket name in `utils/aws-helper.ts` (currently mocked for demonstration).
+
+## CI/CD Pipeline
+
+The project includes a GitHub Actions workflow (`.github/workflows/quality-gate.yml`) that:
+1. Installs dependencies.
+2. Runs integration tests.
+3. Runs load tests (sanity check).
+4. Generates a test report.
+5. Uploads the report as an artifact and (conceptually) to S3.
+
+## License
+
+MIT
