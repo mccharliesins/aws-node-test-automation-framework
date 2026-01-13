@@ -67,7 +67,3 @@ The project includes a GitHub Actions workflow (`.github/workflows/quality-gate.
 3. Runs load tests (sanity check).
 4. Generates a test report.
 5. Uploads the report as an artifact and (conceptually) to S3.
-
-## License
-
-MIT
